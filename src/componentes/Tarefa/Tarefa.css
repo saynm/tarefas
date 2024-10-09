@@ -1,0 +1,16 @@
+.tarefa {
+    color: antiquewhite;
+    background-color: cadetblue;
+    padding: 2%;
+}
+.completa{
+    text-decoration: line-through;
+    color: #ff0000;
+}
+.tarefa-container{
+     border: 1px solid black;
+        background-color: lightblue;
+        border-radius: 5px;
+        padding: 2%;
+        margin-bottom: 2%;
+}
