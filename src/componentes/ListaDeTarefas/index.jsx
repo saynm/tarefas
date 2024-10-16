@@ -36,8 +36,18 @@ function ListaDeTarefas() {
         userName={userName}
         titulo={tarefa.title}
         key={tarefa.id}
+        id={tarefa.id}
         completa={completa}
+        onCompletaChange={onCompletaChange}
       />
+    );
+  }
+
+  function onCompletaChange(tarefaId, novaCompleta) {
+    setTarefas(
+      tarefas.map((tarefa) =>
+        tarefa.id === tarefaId ? { ...tarefa, completed: novaCompleta } : tarefa
+      )
     );
   }
 
@@ -59,7 +69,7 @@ function ListaDeTarefas() {
         O método map percorre cada elemento do array e executa uma função para cada um deles. 
         Neste caso, a função passada para o map é (tarefa) => escreveTarefa(tarefa), 
         que chama a função escreveTarefa para cada tarefa. */}
-        {filtrarTarefas(false).map((tarefa) => escreveTarefa(tarefa))}
+        {filtrarTarefas(false).map((tarefa) => escreveTarefa(tarefa, false))}
       </div>
       <div>
         <h2>Tarefas Completas</h2>
