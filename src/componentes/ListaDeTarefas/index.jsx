@@ -33,8 +33,8 @@ function App() {
     const tarefasPendentes = todos.filter((todo) => !todo.completed);
 
     const alterarEstado = (id) => {
-        setTodos((prevTodos) =>
-            prevTodos.map((todo) =>
+        setTodos((preTodos) =>
+            preTodos.map((todo) =>
                 todo.id === id ? { ...todo, completed: true } : todo
             )
         );
