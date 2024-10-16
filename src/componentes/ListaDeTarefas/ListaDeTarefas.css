@@ -1,0 +1,33 @@
+.App {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    width: 100vw;
+    justify-content: space-around;
+}
+
+.tarefas-completas,
+.tarefas-pendentes {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.tarefas-completas {
+    background-color: green;
+}
+
+.tarefas-pendentes {
+    background-color: red;
+}
+
+.tarefa {
+    margin: 5px 0;
+}
