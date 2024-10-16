@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Tarefa from "../Tarefa";
 import "./ListaDeTarefas.css";
+import AddTask from "../AddTask";
 
 /**
  * Componente ListaDeTarefas.
@@ -19,6 +20,16 @@ function ListaDeTarefas() {
       .then((response) => response.json())
       .then((data) => setUsuarios(data));
   }, []);
+
+  const addTask = (taskText) => {
+    const novaTarefa = {
+      id: Date.now(),
+      title: taskText,
+      user: { id: 1 },
+      completed: false,
+    };
+    setTarefas([novaTarefa, ...tarefas]);
+  };
 
   /**
    * Função que escreve uma tarefa.
@@ -63,6 +74,7 @@ function ListaDeTarefas() {
 
   return (
     <div className="light-gray container">
+      <AddTask addTask={addTask} />
       <div>
         <h2>Tarefas Pendentes</h2>
         {/* o método map é chamado no array retornado por filtrarTarefas(false). 

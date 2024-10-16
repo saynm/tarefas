@@ -1,0 +1,9 @@
+.formulario{
+    display:flex;
+    justify-content: center;
+    margin-top: 5%;
+    gap:5%
+}
+.botao{
+    background-color: white;
+}
